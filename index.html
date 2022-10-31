@@ -106,27 +106,31 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">objective.py</span></code>        - A module which contains the objective function and solver.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">spline_functions.py</span></code> - A module for spline construction/evaluation/output.</p></li>
 </ul>
-</section>
-<section id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h3>
-<p>You need to install the following softwares</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">scipy</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">ase</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">cvxopt</span>
-</pre></div>
-</div>
+<!---
+### Prerequisites
+
+You need to install the following softwares
+
+```
+pip install numpy
+pip install scipy
+pip install ase
+pip install cvxopt
+```
+### Installing from source
+
+#### Git clone
+
+```
+git clone git@github.com/Teoroo-CMC/CCS.git
+cd CCS
+python setup.py install
+```
+--->
 </section>
 <section id="installing-from-source">
 <h3>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this heading"></a></h3>
-<section id="git-clone">
-<h4>Git clone<a class="headerlink" href="#git-clone" title="Permalink to this heading"></a></h4>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Teoroo</span><span class="o">-</span><span class="n">CMC</span><span class="o">/</span><span class="n">CCS</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">CCS</span>
-<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
-</pre></div>
-</div>
-</section>
+<p>pip install -e git+<a class="reference external" href="https://github.com/Teoroo-CMC/CCS">https://github.com/Teoroo-CMC/CCS</a></p>
 </section>
 <section id="environment-variables">
 <h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading"></a></h3>

@@ -68,35 +68,36 @@
            <div itemprop="articleBody">
              
   <h1>Source code for ccs.common.io</h1><div class="highlight"><pre>
-<span></span><span class="c1">#------------------------------------------------------------------------------#</span>
+<span></span><span class="c1"># ------------------------------------------------------------------------------#</span>
 <span class="c1">#  CCS: Curvature Constrained Splines                                          #</span>
 <span class="c1">#  Copyright (C) 2019 - 2021  CCS developers group                             #</span>
 <span class="c1">#                                                                              #</span>
 <span class="c1">#  See the LICENSE file for terms of usage and distribution.                   #</span>
-<span class="c1">#------------------------------------------------------------------------------#</span>
+<span class="c1"># ------------------------------------------------------------------------------#</span>
 
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Common IO routines used by the CCS project.</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
+<span class="sd">&quot;&quot;&quot;</span>
 
 
 <div class="viewcode-block" id="read_detailedout"><a class="viewcode-back" href="../../../autoapi/ccs/common/io/index.html#ccs.common.io.read_detailedout">[docs]</a><span class="k">def</span> <span class="nf">read_detailedout</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Reads desired energy terms from DFTB+ detailed.out files.</span>
+    <span class="sd">&quot;&quot;&quot;Reads desired energy terms from DFTB+ detailed.out files.</span>
 
 <span class="sd">    Args:</span>
 
 <span class="sd">        fname (str): filename to read from</span>
 
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">tags</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Elec&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Electronic energy:&#39;</span><span class="p">),</span>
-            <span class="p">(</span><span class="s1">&#39;Rep&#39;</span><span class="p">,</span> <span class="s1">&#39;Repulsive energy&#39;</span><span class="p">),</span>
-            <span class="p">(</span><span class="s1">&#39;Tene&#39;</span><span class="p">,</span> <span class="s1">&#39;Total energy&#39;</span><span class="p">)]</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Elec&quot;</span><span class="p">,</span> <span class="s2">&quot;Total Electronic energy:&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Rep&quot;</span><span class="p">,</span> <span class="s2">&quot;Repulsive energy&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Tene&quot;</span><span class="p">,</span> <span class="s2">&quot;Total energy&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
 
     <span class="n">tag_values</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
             <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -108,7 +109,7 @@
 
 
 <div class="viewcode-block" id="get_paths_from_file"><a class="viewcode-back" href="../../../autoapi/ccs/common/io/index.html#ccs.common.io.get_paths_from_file">[docs]</a><span class="k">def</span> <span class="nf">get_paths_from_file</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Extracts a list of paths from a given file.</span>
+    <span class="sd">&quot;&quot;&quot;Extracts a list of paths from a given file.</span>
 
 <span class="sd">    Args:</span>
 
@@ -118,12 +119,12 @@
 
 <span class="sd">        paths (list): list of raw paths</span>
 
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
         <span class="n">paths</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
-    <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">]</span>
+    <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">paths</span></div>
 </pre></div>

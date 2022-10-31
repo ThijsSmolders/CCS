@@ -68,16 +68,16 @@
            <div itemprop="articleBody">
              
   <h1>Source code for ccs.common.neighborlist</h1><div class="highlight"><pre>
-<span></span><span class="c1">#------------------------------------------------------------------------------#</span>
+<span></span><span class="c1"># ------------------------------------------------------------------------------#</span>
 <span class="c1">#  CCS: Curvature Constrained Splines                                          #</span>
 <span class="c1">#  Copyright (C) 2019 - 2021  CCS developers group                             #</span>
 <span class="c1">#                                                                              #</span>
 <span class="c1">#  See the LICENSE file for terms of usage and distribution.                   #</span>
-<span class="c1">#------------------------------------------------------------------------------#</span>
+<span class="c1"># ------------------------------------------------------------------------------#</span>
 
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Common neighbor list routines used by the CCS project.</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -87,7 +87,7 @@
 
 
 <div class="viewcode-block" id="pair_dist"><a class="viewcode-back" href="../../../autoapi/ccs/common/neighborlist/index.html#ccs.common.neighborlist.pair_dist">[docs]</a><span class="k">def</span> <span class="nf">pair_dist</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">rcut</span><span class="p">,</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Calculates the pairwise distances between two types of atoms within a</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the pairwise distances between two types of atoms within a</span>
 <span class="sd">       certain cuttoff.</span>
 
 <span class="sd">    Args:</span>
@@ -101,15 +101,18 @@
 
 <span class="sd">        dists_rounded (list): list of distances in Bohr, i.e. atomic units</span>
 
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">ch1</span> <span class="o">==</span> <span class="n">ch2</span><span class="p">:</span>
         <span class="n">bothways</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">bothways</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="n">nl</span> <span class="o">=</span> <span class="n">NeighborList</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_global_number_of_atoms</span><span class="p">()</span> <span class="o">*</span> <span class="p">[</span><span class="n">rcut</span><span class="p">],</span>
-                      <span class="n">self_interaction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bothways</span><span class="o">=</span><span class="n">bothways</span><span class="p">)</span>
+    <span class="n">nl</span> <span class="o">=</span> <span class="n">NeighborList</span><span class="p">(</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">get_global_number_of_atoms</span><span class="p">()</span> <span class="o">*</span> <span class="p">[</span><span class="n">rcut</span><span class="p">],</span>
+        <span class="n">self_interaction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">bothways</span><span class="o">=</span><span class="n">bothways</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">nl</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
 
     <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>

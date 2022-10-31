@@ -57,8 +57,6 @@ Attributes
       This function constructs the matrices A, B, C, D.
 
 
-
-
    .. py:method:: get_v()
 
       Constructs the v matrix.
